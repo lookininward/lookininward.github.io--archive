@@ -1,0 +1,19 @@
+
+{% include header.html %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">page.title = {{ page.title }}</h1>
+    <p class="lead">This contains the page details.</p>
+  </div>
+</div>
+
+<div class="container-fluid" style="">
+	<div class="row">
+		<div class="col col-lg-12">
+			{{ content }}
+		</div>
+	</div>
+</div>
+
+{% include footer.html %}

@@ -1,0 +1,12 @@
+html,
+body {
+  height: 100%; }
+
+body {
+  display: flex;
+  flex-direction: column; }
+
+.container-fluid {
+  flex: 1 0 auto !important; }
+
+/*# sourceMappingURL=michael.css.map */

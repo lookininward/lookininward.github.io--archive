@@ -1,0 +1,18 @@
+{% include header.html %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">page.title = {{ page.title }}</h1>
+    <p class="lead">This contains the home page details. <b>_layouts.home.html</b> is a layout specifically created for the content in index.md. No other content/data file is intended to make use of this layout.</p>
+  </div>
+</div>
+
+<div class="container-fluid">
+{{ content }}
+
+
+this is in header.html. This contains the structure of the page - not the specific content.
+
+</div>
+
+{% include footer.html %}
