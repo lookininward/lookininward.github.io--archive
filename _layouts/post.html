@@ -1,0 +1,28 @@
+
+{% include header.html %}
+
+
+<div class="jumbotron jumbotron-fluid">
+	<div class="container">
+		<h1 class="display-3">page.title = {{ page.title}}</h1>
+		<h5>page.date = {{ page.date }}</h5>
+
+		<ul>
+			<li>Categories: {{ page.categories | join: ', ' }}</li>
+			<li>Tags: {{ page.tags | join: ', ' }}</li>
+		</ul>
+
+
+
+		<p class="lead">This contains the post page details.</p>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col col-lg-12">
+		{{ content }}
+		</div>
+	</div>
+</div>
+
+{% include footer.html %}

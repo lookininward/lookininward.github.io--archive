@@ -13,6 +13,7 @@
     <!-- Bootstrap core CSS -->
     <link href="/scss/bootstrap.css" rel="stylesheet">
 
+    <script type="text/javascript" src="/js/tether.min.js"></script>
     <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -30,9 +31,11 @@
   <a class="navbar-brand" href="{{ site.baseurl }}{% link index.md %}">Michael Xavier</a>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="#">Articles</a>
+      <a class="nav-item nav-link" href="{{ site.baseurl }}{% link articles.md %}">Articles</a>
       <a class="nav-item nav-link" href="{{ site.baseurl }}{% link portfolio.md %}">Portfolio</a>
       <a class="nav-item nav-link" href="{{ site.baseurl }}{% link about.md %}">About</a>
+      <a class="nav-item nav-link" href="{{ site.baseurl }}{% link tags.md %}">Tags</a>
+      <a class="nav-item nav-link" href="{{ site.baseurl }}{% link categories.md %}">Categories</a>
     </div>
   </div>
 </nav>

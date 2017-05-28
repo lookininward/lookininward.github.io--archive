@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2017-05-27 13:59:06 -0400
+title:  Welcome to Jekyll!
 categories: jekyll update
+tags: [new, post, hello]
 ---
 
 Posts probably shouldn't have permalinks.

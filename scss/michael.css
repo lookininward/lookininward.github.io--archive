@@ -9,4 +9,7 @@ body {
 .container-fluid {
   flex: 1 0 auto !important; }
 
+.navbar {
+  flex-shrink: 0; }
+
 /*# sourceMappingURL=michael.css.map */

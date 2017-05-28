@@ -2,7 +2,6 @@
 layout: page
 title: Portfolio
 permalink: /portfolio/
-variable: hello
 ---
 
 A Place to Keep the Projects You've Worked On

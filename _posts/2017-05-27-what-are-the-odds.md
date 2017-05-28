@@ -1,28 +1,16 @@
 ---
 layout: post
 title:  "What are the odds?"
-date:   2017-05-27 13:59:06 -0400
-categories: freedom
+categories: freedom story
+tags: [ola, googley, jajaj]
 ---
 
-Posts probably shouldn't have permalinks.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis viverra ante. Curabitur sit amet est ultricies, placerat nulla non, lobortis libero. Integer non leo in nulla maximus tristique. Fusce sagittis vestibulum tellus, a ullamcorper sem tempus molestie. Vestibulum nec ultricies magna. Nullam sed lectus sapien. Nulla venenatis lectus vel nibh mattis, quis pretium ex eleifend. Donec pulvinar eros ut faucibus scelerisque. Sed viverra venenatis quam, vitae malesuada odio tincidunt sit amet. Maecenas vehicula eros mauris, ac finibus metus vulputate vel. Vivamus sit amet convallis magna. Curabitur elit diam, faucibus eu semper sed, laoreet eu lectus. Aliquam erat volutpat.
 
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Proin pellentesque suscipit felis, eu sollicitudin eros pretium quis. Sed posuere nulla lorem, eget dapibus felis suscipit nec. Proin id ligula eu lectus fermentum fringilla eget at elit. Quisque ut elementum turpis. Etiam augue nulla, scelerisque nec fermentum vitae, volutpat tempor eros. Fusce augue nulla, porta sed arcu ac, tincidunt feugiat sapien. Curabitur venenatis eros vel urna tincidunt sagittis. Maecenas laoreet massa sed tortor cursus maximus. Maecenas vulputate sapien sit amet sem luctus, vitae pharetra ex venenatis. Vestibulum sem justo, porta eu sapien ac, pulvinar vulputate mi. Aliquam erat volutpat. Aenean dapibus maximus erat, eget vestibulum purus porttitor eget. Nullam lobortis interdum odio at dapibus. Phasellus quis nunc eget sem pharetra posuere et sed augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Donec sed lobortis ligula. Proin sit amet varius turpis. Morbi eget dolor facilisis, pulvinar enim quis, lobortis est. Ut quis laoreet urna. Curabitur eget finibus purus. Proin imperdiet aliquet iaculis. In id ante rhoncus, mollis tellus at, lacinia dui. Fusce malesuada consectetur neque in rutrum. Morbi non consectetur turpis. Proin luctus sit amet justo luctus elementum. Mauris pharetra dolor vel nibh consectetur, eget ornare sem tempus. In hac habitasse platea dictumst. Pellentesque vitae laoreet est. Nam imperdiet vel massa et sodales. Sed dignissim diam in sollicitudin congue. Proin at placerat purus.
 
-Jekyll also offers powerful support for code snippets:
+Nunc molestie dui eget tempus tincidunt. Maecenas sollicitudin justo vitae ipsum feugiat, in cursus dolor condimentum. Aliquam quam est, semper in mi at, auctor consectetur dui. Aenean tincidunt et magna et auctor. Nulla eros est, imperdiet et ultricies at, dictum et urna. Morbi sed ligula consectetur, dictum tortor in, sodales eros. Ut hendrerit hendrerit laoreet. Aenean ullamcorper purus arcu, accumsan interdum purus finibus sed. Proin ac posuere sapien. Cras vulputate risus eu lobortis auctor. Suspendisse at dui porta, hendrerit risus ac, eleifend leo. Praesent ut ligula a dolor dictum cursus id sed urna. Praesent diam ipsum, eleifend vel sagittis at, bibendum in elit. Proin eu odio a nulla fringilla cursus.
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+Vivamus ut sapien vel quam volutpat rhoncus. Cras metus nibh, aliquet ut augue sed, efficitur mattis risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla non aliquam nibh. Donec ac sapien quis nisl fermentum ornare vel sed orci. Duis at urna eget neque lacinia vehicula. Aenean eu sapien sed quam aliquet malesuada eget vitae sapien. Maecenas ut sagittis erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, urna vitae venenatis molestie, mi lacus rhoncus tellus, vel hendrerit est lectus a tortor. Quisque porta leo libero, ac vulputate tellus vulputate id. Suspendisse convallis lacus quam, nec convallis nisl condimentum ac. Cras ligula tortor, semper eu commodo ac, dictum a tellus.
