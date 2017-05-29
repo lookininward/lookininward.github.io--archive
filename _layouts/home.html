@@ -2,24 +2,27 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-3">page.title = {{ page.title }}</h1>
-    <p>This page is currently under construction. I learned a lot since the first iteration of this site and wanted to to build something fresh, applying what I've learned, and documenting the process.</p>
+    <h1 class="display-3">page.title = {{ page.title }}</h1><br/>
+    <div class="alert alert-warning">
+    	<p class="lead">This page is currently under construction. I learned a lot since the first iteration of this site and wanted to to build something fresh, applying what I've learned, and documenting the process. If you notice things missing, out of place, or behaving strangely, its because I'm keeping to a workshop atmosphere.</p>
+    </div>
     <p class="lead">This contains the home page details. <b>_layouts.home.html</b> is a layout specifically created for the content in index.md. No other content/data file is intended to make use of this layout.</p>
   </div>
 </div>
 
 <div class="container">
 
-	<div class="row">
+	<div class="row justify-content-center">
 		<div class="col col-lg-12">
 			{{ content }}
 		</div>
 	</div>
 
+	<hr/>
 
 	<div class="row">
 		<div class="col col-lg-12">
-		this is in <b>home.html</b>. This contains the structure of the page - not the specific content.
+		this is in <b>home.html</b>. This contains the structure of the page - not the content. That's in <b>index.md</b>.
 		</div>
 	</div>
 </div>

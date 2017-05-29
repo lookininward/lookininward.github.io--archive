@@ -6,13 +6,17 @@ layout: home
 title: Home Page
 ---
 
-This is in <b>index.md</b> This contains the content for the page. Not the layout.
-
-
-<div class="row">
+<!-- <div class="row">
 	<div class="col col-lg-12">
-		<h3>Limited List of Posts with Links to Post Page</h3>
-		<ul>
+		<p>This is in <b>index.md</b> This contains the content for the page. Not the layout.</p>
+	</div>
+</div><hr/> -->
+
+<!-- Latest Posts and Socia Media -->
+<div class="row">
+	<div class="col col-lg-9">
+		<h3>Latest Posts</h3>
+		<ul class="list-unstyled">
 		{% for post in site.posts limit:3 %}
 		  <li>
 		    <a href="{{ post.url }}">{{ post.title }}  </a> | {{ post.date | date_to_string }}
@@ -20,12 +24,23 @@ This is in <b>index.md</b> This contains the content for the page. Not the layou
 		{% endfor %}
 		</ul>
 	</div>
-</div><br/>
 
+	<div class="col col-lg-3">
+		<h3>Follow Me</h3>
+	    <ul class="list-unstyled">
+		  <li><a href="https://www.linkedin.com/in/vinothmichaelxavier/" target="_blank">LinkedIn</a></li>
+		  <li><a href="https://github.com/lookininward" target="_blank">Github</a></li>
+		  <li><a href="http://stackoverflow.com/users/5513243/lookininward" target="_blank">StackOverflow</a></li>
+		</ul>
+	</div>
+</div><hr/>
+
+<!-- Most Recent Post -->
 <div class="row">
 	<div class="col col-lg-12">
 		{% for post in site.posts limit:1 %}
-		    <h3><a href="{{ post.url }}">{{ post.title }}</a>| {{ post.date | date_to_string }}</h3>
+		    <h1 class="display-5">{{ post.title }}</h1>
+		    <h6>{{ post.date | date_to_string }}</h6><br/>
 		    {{ post.content }}
 		{% endfor %}
 	</div>

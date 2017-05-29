@@ -45,6 +45,12 @@ h6, .h6 { font-size: $font-size-h6; }
   line-height: $display-line-height;
 }
 
+.display-5 {
+  font-size: $display4-size / 1.6;
+  font-weight: $display4-weight / 1.6;
+  line-height: $display-line-height;
+}
+
 
 //
 // Horizontal rules

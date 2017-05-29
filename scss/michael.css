@@ -10,7 +10,8 @@ body {
   flex: 1 0 auto !important; }
 
 .navbar {
-  flex-shrink: 0; }
+  flex-shrink: 0;
+  background-color: #fff !important; }
 
 section {
   margin: 0 0 3em 0; }
