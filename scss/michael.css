@@ -10,6 +10,10 @@ body {
   flex-direction: column;
   background-color: #F9F9F9; }
 
+@media screen and (max-width: 576px) {
+  .container {
+    width: 100% !important; } }
+
 .container-fluid {
   flex: 1 0 auto !important; }
 
@@ -28,6 +32,18 @@ body {
     font-size: 8em;
     letter-spacing: 1px;
     color: #000; }
+    @media screen and (max-width: 576px) {
+      .jumbotron h1 {
+        margin-bottom: 30px;
+        font-size: 7em;
+        line-height: 96px;
+        text-align: center; } }
+    @media screen and (min-width: 320px) and (max-width: 576px) {
+      .jumbotron h1 {
+        margin-bottom: 30px;
+        font-size: 4em;
+        line-height: 56px;
+        text-align: center; } }
 
 .jumbo-home {
   margin-bottom: 4em;
@@ -42,6 +58,10 @@ body {
   .jumbo-home .lead {
     margin: 0;
     font-size: 1em; }
+  @media screen and (max-width: 576px) {
+    .jumbo-home {
+      padding: 3em 1em 1em 1em !important;
+      text-align: center; } }
 
 section {
   margin: 0 0 3em 0; }
