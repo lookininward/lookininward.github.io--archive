@@ -8,7 +8,7 @@ h3 {
 body {
   display: flex;
   flex-direction: column;
-  background-color: #F9F9F9; }
+  background-color: #F9F9F9 !important; }
 
 @media screen and (max-width: 576px) {
   .container {
@@ -37,7 +37,8 @@ body {
         margin-bottom: 30px;
         font-size: 7em;
         line-height: 96px;
-        text-align: center; } }
+        text-align: center;
+        word-wrap: break-word; } }
     @media screen and (min-width: 320px) and (max-width: 576px) {
       .jumbotron h1 {
         margin-bottom: 30px;
@@ -82,6 +83,10 @@ section {
   width: 100%;
   max-width: 1000px;
   border-radius: 6px; }
+
+.subtitle {
+  background-color: #F9F9F9;
+  padding: .4em; }
 
 .navbar {
   flex-shrink: 0;
