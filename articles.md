@@ -1,21 +1,35 @@
 ---
 layout: page
 title: Articles
-description: these are all the articles I've written
+description: all the articles I've written
 permalink: /articles/
 ---
 
-<!-- <div class="row justify-content-start">
-	<div class="col col-lg-12"> -->
-<!-- This is the content for the articles page. It is encapsulated by the structure in <b>_layouts/page.html</b>.
- -->
-<!-- <h3>Full List of Posts with Links to Post Page</h3> -->
-<ul>
+<!-- Article List -->
+<h3>By Date</h3>
+<ul class="list-unstyled">
 {% for post in site.posts %}
   <li>
     <a href="{{ post.url }}">{{ post.title }} </a>| {{ post.date | date_to_string }}
   </li>
 {% endfor %}
-</ul>
-<!-- 	</div>
-</div> -->
+</ul><br/>
+
+
+<!-- Category List  -->
+<h3>By Category</h3>
+{% capture categories %}
+  {% for category in site.categories %}
+    {{ category[0] }}
+  {% endfor %}
+{% endcapture %}
+{% assign sortedtags = categories | split:' ' | sort %}
+
+{% for category in sortedtags %}
+  <h5 id="{{ tag }}">{{ category }}</h5>
+  <ul class="list-unstyled">
+  {% for post in site.categories[category] %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+  </ul>
+{% endfor %}

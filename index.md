@@ -3,7 +3,8 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
-title: Home Page
+title: Michael Xavier
+subtitle: web developer, librarian
 ---
 
 <!-- <div class="row">
@@ -26,14 +27,17 @@ title: Home Page
 	</div>
 
 	<div class="col col-lg-3">
-		<h3>Follow Me</h3>
-	    <ul class="list-unstyled">
-		  <li><a href="https://www.linkedin.com/in/vinothmichaelxavier/" target="_blank">LinkedIn</a></li>
-		  <li><a href="https://github.com/lookininward" target="_blank">Github</a></li>
-		  <li><a href="http://stackoverflow.com/users/5513243/lookininward" target="_blank">StackOverflow</a></li>
-		</ul>
+		
+	    <div class="social-media">
+	    <h3>Follow Me</h3>
+		  <a href="https://www.linkedin.com/in/vinothmichaelxavier/" target="_blank"><img src="/assets/img/icons/linkedin2.svg"></a>
+		  <a href="https://github.com/lookininward" target="_blank"><img src="/assets/img/icons/github.svg"></a>
+		  <a href="http://stackoverflow.com/users/5513243/lookininward" target="_blank"><img src="/assets/img/icons/stackoverflow.svg"></a>
+		</div>
 	</div>
-</div><hr/>
+</div><!-- <hr/> -->
+
+<div class="horizontal-divider"></div>
 
 <!-- Most Recent Post -->
 <div class="row">

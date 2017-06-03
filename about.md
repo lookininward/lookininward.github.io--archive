@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-description: this is what I've been thinking, doing, learning, and trying to achieve
+description: this is what I've been thinking, doing, learning, and trying to achieve.
 permalink: /about/
 ---
 

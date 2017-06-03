@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Portfolio
-description: a place for my work. feel free to ask any questions
+description: a place for my work. feel free to ask any questions.
 permalink: /portfolio/
 ---
 
