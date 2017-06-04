@@ -30,13 +30,19 @@ permalink: /portfolio/
 				<img class="card-img-top img-fluid" src="/assets/img/portfolio/ecut/ecut.png" alt="ecut product gallery">
 				</div>
 				<div class="card">
-					<img class="card-img-top img-fluid" src="/assets/img/portfolio/indramx/indramx-1.png" alt="">
+					<img class="card-img-top img-fluid" src="/assets/img/portfolio/indramx/indramx.gif" alt="">
 				</div>
 				<div class="card">
 					<img class="card-img-top img-fluid" src="/assets/img/portfolio/ned/ned_tablet.png" alt="Card image cap">
 				</div>
 				<div class="card">
-					<img class="card-img-top img-fluid" src="/assets/img/portfolio/ned/ned_tablet.png" alt="Card image cap">
+					<img class="card-img-top img-fluid" src="/assets/img/portfolio/rsguide/rs_desktop.png" alt="cppib research services guide">
+				</div>
+				<div class="card">
+					<img class="card-img-top img-fluid" src="/assets/img/portfolio/rrst/rrat.png" alt="records retention search tool">
+				</div>
+				<div class="card">
+					<img class="card-img-top img-fluid" src="/assets/img/portfolio/ehealth/ehealth.gif" alt="centre for global ehealth innovation">
 				</div>
 			</div>
 		</div>
@@ -67,6 +73,9 @@ permalink: /portfolio/
 				</div>
 				<div class="card">
 					<img class="card-img-top img-fluid" src="/assets/img/clients/ehealth-logo.jpg" alt="global centre for ehealth innovation">
+				</div>
+				<div class="card">
+					<img class="card-img-top img-fluid" src="/assets/img/clients/aescifi-logo.png" alt="ae scifi canadian">
 				</div>
 				<div class="card">
 					<img class="card-img-top img-fluid" src="/assets/img/clients/homelife-logo.gif" alt="homelife realty incorporated">
