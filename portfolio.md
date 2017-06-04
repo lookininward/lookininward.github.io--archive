@@ -18,6 +18,8 @@ permalink: /portfolio/
 </ul> -->
 
 <div class="container">
+
+	<!-- Portfolio Items -->
 	<div class="row">
 		<div class="col col-lg-12">
 			<div class="card-columns">
@@ -33,9 +35,49 @@ permalink: /portfolio/
 				<div class="card">
 					<img class="card-img-top img-fluid" src="/assets/img/portfolio/ned/ned_tablet.png" alt="Card image cap">
 				</div>
+				<div class="card">
+					<img class="card-img-top img-fluid" src="/assets/img/portfolio/ned/ned_tablet.png" alt="Card image cap">
+				</div>
+			</div>
+		</div>
+	</div><br/>
+
+	<!-- Clients and Partners -->
+	<div class="row">
+		<div class="col col-lg-12">
+			<h3>Clients and Partners</h3>
+			<div class="card-columns">
+				<div class="card">
+					<img class="card-img-top img-fluid" src="/assets/img/clients/anew-logo.png" alt="anew building corporation">
+				</div>
+				<div class="card">
+					<img class="card-img-top img-fluid" src="/assets/img/clients/baker-logo.jpg" alt="baker and mckenzie llp">
+				</div>
+				<div class="card">
+					<img class="card-img-top img-fluid" src="/assets/img/clients/decariarealty-logo.png" alt="decaria realty incorporated">
+				</div>
+				<div class="card">
+					<img class="card-img-top img-fluid" src="/assets/img/clients/cpp-logo.jpg" alt="canadian pension plan investment board">
+				</div>
+				<div class="card">
+					<img class="card-img-top img-fluid" src="/assets/img/clients/university-logo.png" alt="university of toronto">
+				</div>
+				<div class="card">
+					<img class="card-img-top img-fluid" src="/assets/img/clients/mibody-logo.png" alt="mibody health and fitness">
+				</div>
+				<div class="card">
+					<img class="card-img-top img-fluid" src="/assets/img/clients/ehealth-logo.jpg" alt="global centre for ehealth innovation">
+				</div>
+				<div class="card">
+					<img class="card-img-top img-fluid" src="/assets/img/clients/homelife-logo.gif" alt="homelife realty incorporated">
+				</div>
+				<div class="card">
+					<img class="card-img-top img-fluid" src="/assets/img/clients/softmouse-logo.png" alt="iseehear incorporated">
+				</div>
 			</div>
 		</div>
 	</div>
+
 </div>
 
 

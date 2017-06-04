@@ -5,6 +5,7 @@ description: all the articles I've written
 permalink: /articles/
 ---
 
+<div class="container">
 <!-- Article List -->
 <h3>By Date</h3>
 <ul class="list-unstyled">
@@ -33,3 +34,4 @@ permalink: /articles/
   {% endfor %}
   </ul>
 {% endfor %}
+</div>

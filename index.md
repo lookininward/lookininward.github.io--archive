@@ -49,5 +49,3 @@ subtitle: web developer, librarian
 		{% endfor %}
 	</div>
 </div>
-
-
