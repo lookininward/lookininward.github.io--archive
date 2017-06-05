@@ -12,10 +12,10 @@ permalink: /categories/
     {{ category[0] }}
   {% endfor %}
 {% endcapture %}
-{% assign sortedtags = categories | split:' ' | sort %}
+{% assign sortedcategories = categories | split:' ' | sort %}
 
-{% for category in sortedtags %}
-  <h5 id="{{ tag }}">{{ category }}</h5>
+{% for category in sortedcategories %}
+  <h5 id="{{ category }}">{{ category }}</h5>
   <ul class="list-unstyled">
   {% for post in site.categories[category] %}
     <li><a href="{{ post.url }}">{{ post.title }}</a></li>
