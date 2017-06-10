@@ -4,23 +4,23 @@
 
 <div class="jumbotron jumbotron-fluid">
 	<div class="container">
-		<h1 class="display-3">{{ page.title}}</h1>
-		<h5>{{ page.date }}</h5>
+		<h1 class="display-3">{{ post.title}}</h1>
+		<h5>{{ page.date | date_to_string }}</h5>
 
-		<ul>
-			<li>Categories: {{ page.categories | join: ', ' }}</li>
-			<li>Tags: {{ page.tags | join: ', ' }}</li>
+		<ul class="list-unstyled">
+			<li>Categories: {{ post.categories | join: ', ' }}</li>
+			<li>Tags: {{ post.tags | join: ', ' }}</li>
 		</ul>
 
-
-
-		<p class="lead">This contains the post page details.</p>
+		<!-- <p class="lead">This contains the post page details.</p> -->
 	</div>
 </div>
 <div class="container-fluid">
 	<div class="row justify-content-center">
 		<div class="col col-lg-8">
-		{{ content }}
+			<div class="content">
+				{{ content }}
+			</div>
 		</div>
 	</div>
 </div>

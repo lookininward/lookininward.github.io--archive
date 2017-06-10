@@ -5,9 +5,6 @@ description: Guide to setting up a Jekyll blog with Bootstrap 4, unique tag and 
 categories: jekyll guide 
 tags: [jekyll, guide]
 ---
-
-
-
 <section>
 	<h3>Step 1: Create a new page layout template</h3>
 	<p>In <b>root/_layouts</b> create a new file called "<b>page.html</b>", with the following:</p>
@@ -74,49 +71,3 @@ tags: [jekyll, guide]
 	{% endraw %}{% endhighlight %}
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

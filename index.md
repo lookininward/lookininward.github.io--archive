@@ -42,10 +42,13 @@ subtitle: web developer, librarian
 <!-- Most Recent Post -->
 <div class="row">
 	<div class="col col-lg-12">
-		{% for post in site.posts limit:1 %}
-		    <h1 class="display-5">{{ post.title }}</h1>
+		<div class="recent-posts">
+		{% for post in site.posts limit:2 %}
+		    <h1 class="display-5"><a href="{{ post.url }}">{{ post.title }}</a></h1>
 		    <h6>{{ post.date | date_to_string }}</h6><br/>
 		    {{ post.content }}
+		    <div class="horizontal-divider"></div>
 		{% endfor %}
+		</div>
 	</div>
 </div>
