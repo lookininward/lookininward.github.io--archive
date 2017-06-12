@@ -103,6 +103,9 @@ section {
   background-color: #F9F9F9;
   padding: .4em; }
 
+pre {
+  background-color: #E7E0E2; }
+
 .navbar {
   flex-shrink: 0;
   background-color: #fff !important; }
