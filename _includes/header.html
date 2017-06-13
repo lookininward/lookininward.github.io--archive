@@ -25,38 +25,38 @@
       <a class="nav-item nav-link" href="{{ site.baseurl }}{% link articles.md %}">Articles</a>
       <a class="nav-item nav-link" href="{{ site.baseurl }}{% link portfolio.md %}">Portfolio</a>
       <a class="nav-item nav-link" href="{{ site.baseurl }}{% link about.md %}">About</a>
-      <a class="nav-item nav-link" href="mailto:vinoth.michaelxavier@gmail.com"><b>Contact</b></a>
-      <!-- <a class="nav-item nav-link" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo""><b>Contact</b></a> -->
+      <a class="nav-item nav-link" data-toggle="modal" data-target="#contactModal" data-whatever="@mdo" style="cursor:pointer;"><b>Contact</b></a>
     </div>
   </div>
 </nav> <!-- End Navigation -->
 
 <!-- Contact Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New Message</h5>
+        <h5 class="modal-title" id="contactModalLabel">New Message</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <form method="post" action="mailto:vinoth.michaelxavier@gmail.com">
+
+      <form method="POST" action="http://formspree.io/vinoth.michaelxavier@gmail.com">
+        <div class="modal-body">
           <div class="form-group">
-            <label for="recipient-name" class="form-control-label">Email:</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <label for="email" class="form-control-label">Email</label>
+            <input type="email" name="email" class="form-control" placeholder="" required>
           </div>
           <div class="form-group">
-            <label for="message-text" class="form-control-label">Message:</label>
-            <textarea class="form-control" id="message-text" rows="7"></textarea>
+            <label for="message" class="form-control-label">Message</label>
+            <textarea name="message" class="form-control" placeholder="" rows="7" required></textarea>
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
-      </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-secondary">Send</button>
+        </div>
+      </form>
+
     </div>
   </div>
 </div> <!-- End Contact Modal -->
