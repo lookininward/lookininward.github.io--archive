@@ -5,7 +5,6 @@ description: Guide to setting up a Jekyll blog with Bootstrap 4, unique tag and 
 categories: jekyll guide 
 tags: [jekyll, guide]
 ---
-
 <!-- Table of Contents -->
 <section>
 	<h3>This guide covers the following:</h3>

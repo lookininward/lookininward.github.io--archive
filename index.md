@@ -4,7 +4,7 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 title: Michael Xavier
-subtitle: web developer, librarian
+subtitle: web developer
 ---
 
 <!-- <div class="row">

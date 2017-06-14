@@ -4,6 +4,7 @@ title: Toronto's Libraries
 categories : about
 tags : [libraries, economics, poverty reduction]
 ---
+<section>
 About libraries
 - Lynda
 - Other resources available
@@ -14,4 +15,4 @@ About libraries
 - Adult Education
 - Self-Motivated Learning
 - Opportunities
-
+</section>

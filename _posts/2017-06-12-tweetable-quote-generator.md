@@ -5,10 +5,9 @@ description: A tweetable quote generator that cycles through quotes and makes th
 categories: javascript 
 tags: [javascript]
 ---
-
-
+<section>
 <p>Here is a quote generator that cycles through an array of quotes and outputs them onto the DOM. Every time the "Next Quote" button is clicked the DOM will update with the new quote, its author, and source. The tweet button's href attribute will also be updated so that when clicked, it will open up a twitter share window with a tweet pre-populated with the quote and author, ready to be tweeted. I will use the minimum amount of markup to get the point across.</p>
-
+</section>
 <section>
 <h3>The Structure in HTML</h3>
 <p>First let's write the HTML. A div with the class "quote-generator" encapsulates two inner divs, "quote" and "menu". "quote" will house the quote, author name, and source, while "menu" will contain the "Next Quote" and tweet buttons.</p>

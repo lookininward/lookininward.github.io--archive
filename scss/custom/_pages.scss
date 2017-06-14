@@ -1,0 +1,27 @@
+.content {
+	padding-top: 0em;
+}
+
+.recent-posts {
+	h1 > a {color: #000;}
+}
+
+section {
+	margin: 0 0 3em 0;
+}
+
+.horizontal-divider {
+	margin: 1em 0 2.7em 0;
+	background-color: #7E6771;
+	// background: url("/assets/img/rooftop.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	filter: grayscale(0.3);
+	filter: contrast(1);
+	height: 2px;
+	width: 100%;
+	max-width: 1000px;
+	border-radius: 6px;
+}
