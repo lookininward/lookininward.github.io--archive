@@ -4,14 +4,8 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 title: Michael Xavier
-subtitle: web developer
+subtitle: software developer, product designer (ux/ui)
 ---
-
-<!-- <div class="row">
-	<div class="col col-lg-12">
-		<p>This is in <b>index.md</b> This contains the content for the page. Not the layout.</p>
-	</div>
-</div><hr/> -->
 
 <!-- Latest Posts and Socia Media -->
 <div class="row">
@@ -27,7 +21,6 @@ subtitle: web developer
 	</div>
 
 	<div class="col col-lg-3">
-		
 	    <div class="social-media">
 	    <h3>Follow Me</h3>
 		  <a href="https://www.linkedin.com/in/vinothmichaelxavier/" target="_blank"><img src="/assets/img/icons/linkedin2.svg"></a>
@@ -35,7 +28,7 @@ subtitle: web developer
 		  <a href="http://stackoverflow.com/users/5513243/lookininward" target="_blank"><img src="/assets/img/icons/stackoverflow.svg"></a>
 		</div>
 	</div>
-</div><!-- <hr/> -->
+</div>
 
 <div class="horizontal-divider"></div>
 
