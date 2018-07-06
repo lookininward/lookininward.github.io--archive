@@ -34,3 +34,10 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+
+plugins_dir:
+  - jekyll-feed
+
+sass:
+    sass_dir: _sass
+    style: compressed
