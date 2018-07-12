@@ -1,4 +1,10 @@
-pre {
-	background-color: #E7E0E2;
-  // background: rgba(0,0,0,.05);
+.highlight {
+  width: 100%;
 }
+
+pre {
+  padding: 20px;
+  background: $black-5;
+  font-size: $font-14;
+}
+
