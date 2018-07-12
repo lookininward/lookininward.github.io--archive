@@ -8,19 +8,9 @@ subtitle: software developer, product designer (ux/ui)
 ---
 
 <!-- Latest Posts and Socia Media -->
-<div class="row">
-	<div class="col col-lg-9">
-		<h3>Latest Posts</h3>
-		<ul class="list-unstyled">
-		{% for post in site.posts limit:3 %}
-		  <li>
-		    <a href="{{ post.url }}">{{ post.title }}  </a> | {{ post.date | date_to_string }}
-		  </li>
-		{% endfor %}
-		</ul>
-	</div>
+<div class="flex-column flex-md-row-reverse">
 
-	<div class="col col-lg-3">
+	<div class="col col-12 col-lg-3 text-center text-md-left mb-3">
 	    <div class="social-media">
 	    <h3>Follow Me</h3>
 		  <a href="https://www.linkedin.com/in/vinothmichaelxavier/" target="_blank"><img src="/assets/img/icons/linkedin2.svg"></a>
@@ -28,13 +18,27 @@ subtitle: software developer, product designer (ux/ui)
 		  <a href="http://stackoverflow.com/users/5513243/lookininward" target="_blank"><img src="/assets/img/icons/stackoverflow.svg"></a>
 		</div>
 	</div>
+
+	<div class="col col-lg-9">
+		<h3 class="text-center text-md-left">Latest Posts</h3>
+		<ul class="list-unstyled text-center">
+		{% for post in site.posts limit:3 %}
+		  <li class="d-flex">
+		    <a href="{{post.url}}" class="mr-md-2">{{ post.title }} </a>
+		    <div class="d-none d-md-flex">
+		    	| {{ post.date | date_to_string }}
+		    </div>
+		  </li>
+		{% endfor %}
+		</ul>
+	</div>
 </div>
 
 <div class="horizontal-divider"></div>
 
 <!-- Most Recent Post -->
 <div class="row">
-	<div class="col col-lg-12">
+	<div class="col col-lg-12 align-self-center">
 		<div class="recent-posts">
 		{% for post in site.posts limit:2 %}
 		    <h1 class="display-5"><a href="{{ post.url }}">{{ post.title }}</a></h1>

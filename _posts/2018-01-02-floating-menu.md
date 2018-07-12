@@ -9,7 +9,8 @@ tags: [javascript]
 <p>
   Sometimes you have applications that demand the maximum amount of content be displayed for users. Here even the smallest vertical or horizontal menus take too much real estate. One relatively simple solution involves a floating menu bar that pops open when you need it and melts away when interacting with the main content.
 </p>
-<img src="/assets/img/posts/2018/floating-menu.gif" class="img-fluid mt-3">
+<img src="/assets/img/posts/2018/floating-menu.gif"
+     class="img-fluid align-self-center mt-3">
 </section>
 
 <section>
@@ -164,7 +165,7 @@ tags: [javascript]
 {% endhighlight %}
 
 <img src="/assets/img/posts/2018/floating-menu-2.gif"
-     class="img-fluid mt-3 mb-5">
+     class="img-fluid align-self-center mt-3 mb-5">
 
 <a href="https://codepen.io/lookininward/pen/aLJBoE"
    target="_blank"
