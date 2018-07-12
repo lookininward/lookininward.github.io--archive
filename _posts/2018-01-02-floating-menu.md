@@ -2,7 +2,7 @@
 layout: post
 title: Floating Menu for Full Bleed Content Pages
 description: A simple floating menu for full-bleed content pages
-categories: javascript
+categories: javascript, front-end
 tags: [javascript]
 ---
 <section>
@@ -16,21 +16,20 @@ tags: [javascript]
 <h3>HTML</h3>
 <p>The structure is simple: The 'header' div contains the content that appears when the menu is collapsed and the 'items' div contains the menu items that appear when the menu is expanded.</p>
 
+
 {% highlight html %}
-  {% raw %}
-    <div class="menu" id="menu">
-      <div class="header">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-      </div>
-      <div class="items">
-        <div class="link">Home</div>
-        <div class="link">Office</div>
-        <div class="link">Market</div>
-        <div class="link">Gym</div>
-        <div class="link">Park</div>
-      </div>
+  <div class="menu" id="menu">
+    <div class="header">
+      <i class="fa fa-bars" aria-hidden="true"></i>
     </div>
-  {% endraw %}
+    <div class="items">
+      <div class="link">Home</div>
+      <div class="link">Office</div>
+      <div class="link">Market</div>
+      <div class="link">Gym</div>
+      <div class="link">Park</div>
+    </div>
+  </div>
 {% endhighlight %}
 
 </section>
@@ -42,32 +41,30 @@ tags: [javascript]
 </p>
 
 {% highlight scss %}
-  {% raw %}
-    .menu {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 99;
-      position: fixed;
-      top: 24px;
-      left: 24px;
-      width: 50px;
-      height: 50px;
-      background-color: #7C93B2;
-      border: 2px solid #fff;
-      border-radius: 120%;
-      color: #fff;
-      cursor: pointer;
-      opacity: .3;
-      transition: .2s;
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    width: 50px;
+    height: 50px;
+    background-color: #7C93B2;
+    border: 2px solid #fff;
+    border-radius: 120%;
+    color: #fff;
+    cursor: pointer;
+    opacity: .3;
+    transition: .2s;
 
-        &:hover {
-         background-color: #3D4049;
-         opacity: 1;
-      }
+      &:hover {
+       background-color: #3D4049;
+       opacity: 1;
     }
-  {% endraw %}
+  }
 {% endhighlight %}
 
 <p>
@@ -75,21 +72,19 @@ tags: [javascript]
 </p>
 
 {% highlight scss %}
-  {% raw %}
-    .menu--expanded {
-      width: 150px;
-      height: 200px;
-      background: #7C93B2;
-      color: #fff;
-      border-radius: 10px;
-      opacity: 1;
-      transition: .2s;
+  .menu--expanded {
+    width: 150px;
+    height: 200px;
+    background: #7C93B2;
+    color: #fff;
+    border-radius: 10px;
+    opacity: 1;
+    transition: .2s;
 
-      &:hover {
-       background: #7C93B2;
-     }
-    }
-  {% endraw %}
+    &:hover {
+     background: #7C93B2;
+   }
+  }
 {% endhighlight %}
 
 <p>
@@ -97,22 +92,20 @@ tags: [javascript]
 </p>
 
 {% highlight scss %}
-  {% raw %}
-    .menu--expanded .header {
-      display: none;
-    }
+  .menu--expanded .header {
+    display: none;
+  }
 
-    .items {
-      display: none;
-      width: 100%;
-    }
+  .items {
+    display: none;
+    width: 100%;
+  }
 
-    .menu--expanded .items {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  {% endraw %}
+  .menu--expanded .items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 {% endhighlight %}
 
 <p>
@@ -120,20 +113,18 @@ tags: [javascript]
 </p>
 
 {% highlight scss %}
-  {% raw %}
-    .link {
-      margin: 5px 0;
-      padding: 4px;
-      width: 100%;
-      border-radius: 5px;
-      font-size: 16px;
-      text-align: center;
+  .link {
+    margin: 5px 0;
+    padding: 4px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
 
-     &:hover {
-      background-color: #3d4049;
-     }
-    }
-  {% endraw %}
+   &:hover {
+    background-color: #3d4049;
+   }
+  }
 {% endhighlight %}
 </section>
 
@@ -144,17 +135,15 @@ tags: [javascript]
 </p>
 
 {% highlight javascript %}
-  {% raw %}
-    const menu = document.getElementById('menu');
+  const menu = document.getElementById('menu');
 
-    function expandMenu() {
-      if (!menu.classList.contains('menu--expanded')) {
-        menu.classList.add('menu--expanded');
-      }
+  function expandMenu() {
+    if (!menu.classList.contains('menu--expanded')) {
+      menu.classList.add('menu--expanded');
     }
+  }
 
-    menu.addEventListener("click", expandMenu);
-  {% endraw %}
+  menu.addEventListener("click", expandMenu);
 {% endhighlight %}
 
 <p>
@@ -162,21 +151,20 @@ tags: [javascript]
 </p>
 
 {% highlight javascript %}
-  {% raw %}
-    // Remove menu--expanded class on click away
-    document.addEventListener('click', function(event) {
+  // Remove menu--expanded class on click away
+  document.addEventListener('click', function(event) {
 
-      var clickInside =  menu.contains(event.target);
+    var clickInside =  menu.contains(event.target);
 
-      if (clickInside) {
-      } else {
-        menu.classList.remove('menu--expanded');
-      }
-    });
-  {% endraw %}
+    if (clickInside) {
+    } else {
+      menu.classList.remove('menu--expanded');
+    }
+  });
 {% endhighlight %}
 
-<img src="/assets/img/posts/2018/floating-menu-2.gif" class="img-fluid mt-3">
+<img src="/assets/img/posts/2018/floating-menu-2.gif"
+     class="img-fluid mt-3 mb-5">
 
 <a href="https://codepen.io/lookininward/pen/aLJBoE"
    target="_blank"
