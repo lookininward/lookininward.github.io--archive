@@ -8,7 +8,7 @@ subtitle: software developer, product designer (ux/ui)
 ---
 
 <!-- Latest Posts and Socia Media -->
-<div class="flex-column flex-md-row-reverse">
+<div class="flex-column flex-md-row-reverse mb-5">
 
 	<div class="col col-12 col-lg-3 text-center text-md-left mb-3">
 	    <div class="social-media">
@@ -23,7 +23,7 @@ subtitle: software developer, product designer (ux/ui)
 		<h3 class="text-center text-md-left">Latest Posts</h3>
 		<ul class="list-unstyled text-center">
 		{% for post in site.posts limit:3 %}
-		  <li class="d-flex">
+		  <li class="d-block d-md-flex">
 		    <a href="{{post.url}}" class="mr-md-2">{{ post.title }} </a>
 		    <div class="d-none d-md-flex">
 		    	| {{ post.date | date_to_string }}

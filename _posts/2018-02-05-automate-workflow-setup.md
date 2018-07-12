@@ -208,9 +208,9 @@ tags: [iTerm, AppleScript, Workflow]
   <strong>NOTE</strong>: If you have processes that require password input you may have to add exceptions to <code>/etc/sudoers</code>
 </p>
 
-<p>
-  <a href="https://askubuntu.com/questions/412525/vagrant-up-and-annoying-nfs-password-asking" target="_blank">
-    This is an example to deal with Vagrant, but can be repurposed to your needs.
-  </a>
-</p>
+<a href="https://askubuntu.com/questions/412525/vagrant-up-and-annoying-nfs-password-asking"
+   class="align-self-center"
+   target="_blank">
+  This is an example to deal with Vagrant, but can be repurposed to your needs.
+</a>
 </section>

@@ -169,7 +169,7 @@ tags: [javascript]
 
 <a href="https://codepen.io/lookininward/pen/aLJBoE"
    target="_blank"
-   class="mt-4">
+   class="mt-4 align-self-center">
  Check out the CodePen for a live example.
 </a>
 </section>
