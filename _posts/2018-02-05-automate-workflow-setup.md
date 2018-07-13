@@ -1,7 +1,7 @@
 ---
 layout: post
 title: iTerm2, AppleScript, and Jumping Quickly into Your Workflow
-description: take advantage of iTerm2's Apple Script integration to get your development environments up and running in seconds
+description: Take advantage of iTerm2's Apple Script integration to get your development environments up and running in seconds
 categories: iTerm AppleScript Workflow
 tags: [iTerm, AppleScript, Workflow]
 ---

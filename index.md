@@ -1,15 +1,11 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 title: Michael Xavier
 subtitle: software developer, product designer (ux/ui)
 ---
 
 <!-- Latest Posts and Socia Media -->
-<div class="flex-column flex-md-row-reverse mb-5">
-
+<div class="row mb-5">
 	<div class="col col-12 col-lg-3 text-center text-md-left mb-3">
 	    <div class="social-media">
 	    <h3>Follow Me</h3>
