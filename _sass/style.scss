@@ -2,12 +2,15 @@
 @import 'base/colors';
 @import 'base/fonts';
 
+// General --------------------------------------------------------------------
 @import 'custom/navigation';
 @import 'custom/jumbotron';
 @import 'custom/pages';
 @import 'custom/code';
 @import 'custom/footer';
 
+// Components -----------------------------------------------------------------
+@import 'components/buttons';
 
 body {
 	background-color: $black-2;
