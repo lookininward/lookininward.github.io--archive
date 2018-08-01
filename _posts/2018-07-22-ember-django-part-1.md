@@ -9,328 +9,178 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
 <!-- INTRODUCTION ------------------------------------------------------------>
 
 <section>
-<div class="row">
-  <div class="col col-12 col-md-4">
-    <img src="/assets/img/posts/2018/emberjs.png"
-         class="img-fluid align-self-center mb-3 mb-md-0">
-  </div>
+  <div class="row">
 
-  <div class="col col-12 col-md-8">
-    <p>
-      Welcome to my three part tutorial connecting a Django backend to a EmberJS front end.
-    </p>
+    <div class="col col-12 col-md-5">
+      <img src="/assets/img/posts/2018/emberjs.png"
+           class="img-fluid align-self-center mb-3 mb-md-0">
 
-    <ul>
-      <li>Part 1</li>
-      <li>
-        <a>
-          Part 2
-        </a>
-      </li>
-      <li>
-        <a>
-          Part 3
-        </a>
-      </li>
-    </ul>
+      <img src="/assets/img/posts/2018/python.jpg"
+           class="img-fluid align-self-center mb-3 mb-md-0">
+
+      <img src="/assets/img/posts/2018/django.png"
+           class="img-fluid align-self-center mb-3 mb-md-0">
+    </div>
+
+    <div class="col col-12 col-md-7">
+      <p>
+        Welcome to my three part tutorial '<b>Django and EmberJS Fullstack: Connecting the Backend to the Frontend</b>'. This is written as an introduction to everyone including <b><i>absolute beginners</i></b> so if you don't need the hand holding just push on through to the sections relevant to you. Each part is also kept relatively short and to the point so that no one's head explodes and you have natural points at which you can go back and look at what you've done or saved your state using github, etc.
+      </p>
+
+      <ul>
+        <li>Part 1</li>
+        <li>
+          <a href="#" target="_blank">
+            Part 2
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            Part 3
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            Part 4
+          </a>
+        </li>
+      </ul>
+    </div>
+
   </div>
-</div>
 </section>
 
 
-<!-- Installation ------------------------------------------------------------>
+<!-- BACKEND ----------------------------------------------------------------->
 
 <section>
-<h3>Installation & Setup</h3>
-<ul>
-  <li>
-    <a href="https://pip.pypa.io/en/latest/installing/#installing-with-get-pip-py"
-       target="_blank">
-      Pip
-    </a>
-  </li>
-  <li>
-    <a href="https://virtualenv.pypa.io/en/stable/installation/"
-       target="_blank">
-     virtualenv
-    </a>
-   </li>
-  <li>
-    <a href="https://docs.djangoproject.com/en/1.11/topics/install/"
-       target="_blank">
-      Django
-    </a>
-  </li>
-</ul>
 
+  <h3>Backend: Install Required Software</h3>
 
-<!-- Pip ---------------------------------------->
+  <p>
+    The first step is to install the software required to develop the backend of our application. Let's go ahead and install the following:
+  </p>
 
-<h6>pip</h6>
-<p>
-  Simply put, pip (Pip Installs Packages) is 'is a package management system used to install and manage software packages written in Python.'. We'll ultimately use pip to install virtualenv, and Django.
-</p>
+  <ul>
+    <li><a href="#install-pip">Pip</a></li>
+    <li><a href="#install-virtualenv">virtualenv</a></li>
+    <li><a href="#install-django">Django</a></li>
+  </ul>
 
-{% highlight bash %}
-  curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-  python get-pip.py
-  pip —version
-{% endhighlight %}
+  <!-- Pip --------------------------->
 
+  <h6 id="install-pip">pip</h6>
+  <p>
+    Simply put, pip (Pip Installs Packages) is '<em>a package management system used to install and manage software packages written in Python</em>'. Full installation documentation can be found <a href="https://pip.pypa.io/en/latest/installing/#installing-with-get-pip-py" target="_blank">here</a>.
+  </p>
 
-<!-- virtualenv --------------------------------->
+  <p>
+    Now, open up the terminal:
+  </p>
 
-<h6>virtualenv</h6>
-<p>
-  virtualenv 'is a tool to create isolated Python environments... It creates an environment that has its own installation directories, that doesn’t share libraries with other virtualenv environments (and optionally doesn’t access the globally installed libraries either).' You can install, modify and play with python packages and libraries without affecting your global environment.
-</p>
+  {% highlight bash %}
+    # cd into your desktop directory
+    cd ~/desktop
 
-<p>Let's install virtualenv and confirm it has been installed:</p>
+    # download the pip python script
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
-{% highlight bash %}
-  $ [sudo] pip install virtualenv
-  virtualenv —version
-{% endhighlight %}
+    # run the script you downloaded
+    python get-pip.py
 
-<p>Create a virtual environment for our project:</p>
+    # once installation completes, verify that it's installed
+    pip —version
+  {% endhighlight %}
 
-{% highlight bash %}
-  $ mkdir ~/.virtualenvs
-  $ python3 -m venv ~/.virtualenvs/djangodev
-  $ source ~/.virtualenvs/djangodev/bin/activate
-  activate with: source bin/activate
-{% endhighlight %}
+  <p class="mb-5">
+    Now that pip is installed, we'll use pip to install virtualenv, and Django.
+  </p>
 
-<!-- https://pip.pypa.io/en/latest/installing/#upgrading-pip -->
+  <!-- virtualenv -------------------->
 
+  <h6 id="install-virtualenv">virtualenv</h6>
+  <p>
+    virtualenv '<em>is a tool to create isolated Python environments... It creates an environment that has its own installation directories, that doesn’t share libraries with other virtualenv environments (and optionally doesn’t access the globally installed libraries either)</em>'. You can install, modify and play with python packages and libraries without messing up your global environment. Full installation documentation can be found <a href="https://virtualenv.pypa.io/en/stable/installation/" target="_blank">here</a>.
+  </p>
 
-<!-- Django ------------------------------------------------------------------>
+  <p>
+    Now, open up the terminal:
+  </p>
 
-<h6>Django 1.11</h6>
-<p>
-  Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.
-</p>
+  {% highlight bash %}
+    # we are still in the desktop directory
 
-{% highlight bash %}
-  pip install Django
-  python3
-  import django
-  print(django.get_version())
-{% endhighlight %}
+    # use pip to install virtualenv
+    pip install virtualenv
+
+    # once installation completes, verify that it's installed
+    virtualenv —version
+  {% endhighlight %}
+
+  <p>Now, we can create a virtual environment for our project:</p>
+
+  {% highlight bash %}
+    # create a virtualenv folder called 'server' on the desktop
+    virtualenv server
+
+    # cd into the 'server' directory
+    cd server
+
+    # activate the virtual environment
+    source bin/activate
+  {% endhighlight %}
+
+  <p class="mb-5">
+    Now that we've created a virtual environment called 'server', make sure that the environment is activated before installing, updating packages within the 'server' folder.
+  </p>
+
+  <!-- Django ------------------------>
+
+  <!-- updgrade pip -->
+
+  <h6 id="install-django">Django 1.11</h6>
+  <p>
+    Django is described by it's creators as a '<em>high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel</em>'.
+  </p>
+
+   <p>
+    Checkout out <a href="https://tutorial.djangogirls.org/en/django/" target="_blank">this DjangoGirls article</a> to learn more about Django and why it's used.
+  </p>
+
+  <p>
+    Although Django is fully capable of handling both frontend and backend tasks, we will be using Django solely to handle the backend in this project. Full installation documentation can be found <a href="https://docs.djangoproject.com/en/1.11/topics/install/" target="_blank">here</a>.
+  </p>
+
+  {% highlight bash %}
+
+    # inside the 'server' directory with virtualenv activated
+    pip install Django
+
+    # once installation completes, verify that it's installed
+    # open up the python3 shell
+    python3
+
+    # access the django library and get the version (should be 1.11)
+    import django
+    print(django.get_version())
+  {% endhighlight %}
 
 </section>
 
-
-<!-- Create Django Project —————————------------------------------------------>
 
 <section>
-  django-admin startproject mysite
-  cd into /desktop/mysite
-  python manage.py runserver ## success @localhost:8000
-  cmd+ctrl ## stop server
+  <h3>Conclusion</h3>
+  <p>
+    We've completed the following steps:
+  </p>
 
-<!-- // Create new app ----------------------------------------- -->
+  <ul>
+    <li>Installed the pip package manager</li>
+    <li>Used pip to install virtualenv</li>
+    <li>Created a virtual environment on the desktop called 'server'</li>
+    <li>Activated the 'server' environment and upgraded pip</li>
+    <li>Installed Django 1.11 LTS within the 'server' environment</li>
+  </ul>
 
-{% highlight python %}
-  python3 manage.py startapp items ## create new 'app' items
-  cd into /desktop/mysite/items
-
-  /desktop/mysite/settings.py
-{% endhighlight %}
-
-{% highlight python %}
-  INSTALLED_APPS = [
-    ...
-    'items',
-    ...
-  ]
-{% endhighlight %}
-
-
-<!-- Create model ------------------------------------------------------------>
-
-  create new file /desktop/mysite/items/models.py
-
-{% highlight python %}
-  from django.db import models
-
-  class Item(models.Model):
-    title       = models.CharField(max_length=500)
-    subtitle    = models.CharField(max_length=500, blank=True, null=True)
-    author      = models.CharField(max_length=100)
-    description = models.TextField()
-    cover       = models.CharField(max_length=100, blank=True, null=True)
-{% endhighlight %}
-
-
-<!-- Create views ------------------------------------------------------------>
-
-Is it neccessary to create html views if only using as database?
-
-  create new file /desktop/mysite/items/views.py
-
-{% highlight python %}
-  from django.shortcuts import render
-  from django.http import HttpResponse
-
-  from .models import Item
-
-  def home(request):
-    items = Item.objects.all()
-    return render(request, 'home.html', {'items' : items})
-
-  def item_detail(request, id):
-    try:
-      item = Item.objects.get(id=id)
-    except Item.DoesNotExist:
-      raise Http404('Item not found')
-    return render(request, 'item_detail.html', {'item' : item})
-{% endhighlight %}
-
-
-<!-- Register Admin for Item ------------------------------------------------->
-
-Why do you register the item with the admin?
-
-  create new file /desktop/mysite/items/admin.py
-
-{% highlight python %}
-  from django.contrib import admin
-
-  from .models import Item
-
-  @admin.register(Item)
-  class ItemAdmin(admin.ModelAdmin):
-    list_display = ['title', 'subtitle', 'author', 'description', 'cover']
-{% endhighlight %}
-
-<!-- // Configure the Item app -->
-
-  create new file /desktop/mysite/items/apps.py
-
-{% highlight python %}
-  from django.apps import AppConfig
-
-  class ItemsConfig(AppConfig):
-      name = 'items'
-{% endhighlight %}
+  <p>In part two we will create our Django project.</p>
 </section>
-
-
-<!-- Create API -------------------------------------------------------------->
-
-  ## build REST API w/ Django REST Framework
-  https://www.youtube.com/watch?v=tG6O8YF91HE
-
-  create new folder /desktop/mysite/items/api
-  create new file /desktop/mysite/items/api/__init__.py
-
-<!-- // Install Django REST Framework ------------------------------------- -->
-
-  Django REST framework: http://www.django-rest-framework.org/api-guide/viewsets/#genericviewset
-
-{% highlight bash %}
-  pip install djangorestframework
-  pip install markdown
-  pip install django-filter
-{% endhighlight %}
-
-  /desktop/mysite/settings.py
-
-{% highlight python %}
-  INSTALLED_APPS = [
-  ...
-    'rest_framework',
-  ...
-    'items',
-  ...
-  ]
-{% endhighlight %}
-
-
-<!-- Create Serialier for Items ---------------------------------------------->
-
-  create new file /desktop/mysite/items/api/serializers.py
-
-{% highlight python %}
-  from rest_framework import serializers
-  from items.models import Item
-
-  class ItemSerializer(serializers.ModelSerializer):
-    class Meta:
-      model = Item
-      fields = (
-        'id',
-        'title',
-        'subtitle',
-        'author',
-        'description',
-        'cover',
-      ) # converts to JSON
-
-    # validations for data passed
-    def validate_title(self, value):
-      qs = Item.objects.filter(title__iexact=value)
-      if self.instance:
-          qs = qs.exclude(id=self.instance.id)
-      if qs.exists():
-        raise serializers.ValidationError("This title has already been used")
-      return value
-{% endhighlight %}
-
-
-<!-- Create Views for Items -------------------------------------------------->
-
-  create new file /desktop/mysite/items/api/views.py
-
-{% highlight python %}
-  from django.db.models import Q
-  from rest_framework import generics, mixins
-  from items.models import Item
-  from .serializers import  ItemSerializer
-
-  class ItemAPIView(mixins.CreateModelMixin, generics.ListAPIView):
-    pass
-    lookup_field        = 'id'
-    serializer_class    = ItemSerializer
-
-    def get_queryset(self):
-      qs = Item.objects.all()
-      query = self.request.GET.get('q')
-      if query is not None:
-        qs = qs.filter(Q(title__icontains=query)|Q(description__icontains=query)).distinct()
-      return qs
-
-    def post(self, request, *args, **kwargs):
-      return self.create(request, *args, **kwargs)
-
-  class ItemRudView(generics.RetrieveUpdateDestroyAPIView): # DetailView
-    pass
-    lookup_field        = 'id'
-    serializer_class    = ItemSerializer
-
-    def get_queryset(self):
-      return Item.objects.all()
-{% endhighlight %}
-
-
-<!-- URLs Views for Items ---------------------------------------------------->
-
-  create new file /desktop/mysite/items/api/urls.py
-
-{% highlight python %}
-  from .views import ItemRudView, ItemAPIView
-
-  from django.conf.urls import url
-
-  urlpatterns = [
-    url(r'^$', ItemAPIView.as_view(), name='item-create'),
-    url(r'^(?P<id>\d+)/$', ItemRudView.as_view(), name='item-rud')
-  ]
-{% endhighlight %}
-
-<!-- Create superuser -------------------------------------------------------->
-  <!-- // what is the superuser able to do? -->
-
-<!-- Conclusion ----------------------------------------------------------- -->
-<!-- Use Postman to demonstrate the end points working to return api data ---->
