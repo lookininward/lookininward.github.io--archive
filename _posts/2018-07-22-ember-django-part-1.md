@@ -2,12 +2,12 @@
 layout: post
 title: EmberJS Django - Part One
 description: Connect EmberJS with Django
-categories: EmberJS JavaScript Django Python Frontend Backend, Fullstack
-tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
+categories: EmberJS JavaScript Django Python Frontend Backend, Fullstack, MultiPart
+tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack, MultiPart]
 ---
+<!-- PART ONE  ---------------------------------------------------------------------------------------------------------------------------------------------->
 
 <!-- INTRODUCTION ------------------------------------------------------------>
-
 <section>
   <div class="row">
 
@@ -24,7 +24,7 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
 
     <div class="col col-12 col-md-7">
       <p>
-        Welcome to my three part tutorial '<b>Django and EmberJS Fullstack: Connecting the Backend to the Frontend</b>'. This is written as an introduction to everyone including <b><i>absolute beginners</i></b> so if you don't need the hand holding just push on through to the sections relevant to you. Each part is also kept relatively short and to the point so that no one's head explodes and you have natural points at which you can go back and look at what you've done or saved your state using github, etc.
+        Welcome to <b>Part 1</b> of my three part tutorial '<b>Django and EmberJS Fullstack: Connecting the Backend to the Frontend</b>'. This is written as an introduction to everyone including <b><i>absolute beginners</i></b> so if you don't need the hand holding just push on through to the sections relevant to you. Each part is also kept relatively short and to the point so that no one's head explodes and you have natural points at which you can go back and look at what you've done or saved your state using github, etc.
       </p>
 
       <ul>
@@ -50,9 +50,7 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
   </div>
 </section>
 
-
 <!-- BACKEND ----------------------------------------------------------------->
-
 <section>
 
   <h3>Backend: Install Required Software</h3>
@@ -164,10 +162,9 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
     import django
     print(django.get_version())
   {% endhighlight %}
-
 </section>
 
-
+<!-- CONCLUSION -----------—————————------------------------------------------>
 <section>
   <h3>Conclusion</h3>
   <p>
@@ -184,3 +181,4 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
 
   <p>In part two we will create our Django project.</p>
 </section>
+

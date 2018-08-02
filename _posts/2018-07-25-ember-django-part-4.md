@@ -6,38 +6,160 @@ categories: EmberJS JavaScript Django Python
 tags: [EmberJS, JavaScript, Django, Python]
 ---
 
-// PART 4 ----------------------------------------------------------------------------------------------------------------------------------------------------
+<!-- PART FOUR  --------------------------------------------------------------------------------------------------------------------------------------------->
 
-// Django
-  Django REST framework JSON API: https://github.com/django-json-api/django-rest-framework-json-api
+<section>
 
-// Cleanup
 
-// Item Component
-```
-  {{lb-item
-    item=item
-  }}
-```
+  // Setup EmberJS ---------------------------------------------------------------------------------------------------------------------------------------------
 
-// Items Route Template
-```
-  <div class="items">
-    {{#each items as |item|}}
-      {{lb-item
-        item=item
-      }}
-    {{/each}}
+  // Installation ---------------------------------------------------------------
 
-  </div>
-```
+  // NodeJS -------------------------------------------------
+    Installation File: http://nodejs.org/en/download/
 
-// Item Detail Route
-// Item Detail view
+  // NodeJS with Brew ---------------------------------------
+    Install Brew: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-// JSONAPI Adapter
-  https://www.emberjs.com/api/ember-data/release/classes/DS.JSONAPIAdapter
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-// Conclusion PART 3 -----------------------------------------------------------------------------------------------------------------------------------------
+    brew install node
 
-// Show that get request works and the data being return is corrently formatted and Ember is able to display it properly without areas
+  Check Versions of Node and NPM
+
+    node --version
+    npm --version
+
+
+
+
+  // Install EmberJS ------------------------------------------------------------
+
+    npm install -g ember-cli
+    npm --version
+
+
+  // Create Project
+  // Run server to verify works -- ember s
+
+
+    file client/app/templates/application.hbs
+
+    <div class="container">
+      {{outlet}}
+    </div>
+
+    file client/app/styles/app.scss
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%
+    }
+
+
+
+
+  // Create Items Route ---------------------------------------------------------
+
+    ember g route items
+
+    file client/app/router.js
+
+  ```
+    import EmberRouter from '@ember/routing/router';
+    import config from './config/environment';
+
+    const Router = EmberRouter.extend({
+      location: config.locationType,
+      rootURL: config.rootURL
+    });
+
+    Router.map(function() {
+      this.route('items', function() {});
+    });
+
+    export default Router;
+  ```
+
+    file client/app/routes/items.js
+
+  ```
+    import Route from '@ember/routing/route';
+    import { inject as service } from '@ember/service';
+
+    export default Route.extend({
+      store: service(),
+
+      model() {
+        return this.get('store').findAll('item');
+      }
+    });
+  ```
+
+    file client/app/templates/items.hbs
+
+  ```
+    <div class="items">
+
+      {{#each items as |item|}}
+
+        {{item.title}}
+        {{item.description}}
+
+      {{/each}}
+
+    </div>
+  ```
+
+
+
+
+  // Create Item Model ----------------------------------------------------------
+
+  ```
+    import DS from 'ember-data';
+
+    export default DS.Model.extend({
+      title: DS.attr(),
+      description: DS.attr()
+    });
+  ```
+
+
+
+
+  // Create Adapter -------------------------------------------------------------
+
+    /desktop/client/app/adapters/application.js
+
+    Direct Ember Data to host
+
+  ```
+    import Ember from 'ember';
+    import DS from 'ember-data';
+
+    const { computed } = Ember;
+
+    export default DS.JSONAPIAdapter.extend({
+      host: computed(function(){
+        return 'http://localhost:8000';
+      }),
+
+      namespace: 'api'
+    });
+  ```
+
+  // Conclusion ------------------------------------------------------------------------------------------------------------------------------------------------
+
+  // Demonstrate server works and captures data ---------------------------------
+  // Do GET request
+</section>
