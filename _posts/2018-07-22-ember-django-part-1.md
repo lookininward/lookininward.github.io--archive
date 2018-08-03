@@ -5,6 +5,7 @@ description: Connect EmberJS with Django
 categories: EmberJS JavaScript Django Python Frontend Backend, Fullstack, MultiPart
 tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack, MultiPart]
 ---
+
 <!-- PART ONE  ---------------------------------------------------------------------------------------------------------------------------------------------->
 
 <!-- INTRODUCTION ------------------------------------------------------------>
@@ -24,24 +25,29 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack, MultiP
 
     <div class="col col-12 col-md-7">
       <p>
-        Welcome to <b>Part 1</b> of my three part tutorial '<b>Django and EmberJS Fullstack: Connecting the Backend to the Frontend</b>'. This is written as an introduction to everyone including <b><i>absolute beginners</i></b> so if you don't need the hand holding just push on through to the sections relevant to you. Each part is also kept relatively short and to the point so that no one's head explodes and you have natural points at which you can go back and look at what you've done or saved your state using github, etc.
+        Welcome to <b>Part 1</b> of my 5 part tutorial '<b>Django and EmberJS Fullstack: Connecting the Backend to the Frontend</b>'. This is written as an introduction to everyone including <b><i>absolute beginners</i></b> so if you don't need the hand holding just push on through to the sections relevant to you. Each part is also kept relatively short and to the point so that no one's head explodes and you have natural points at which you can go back and look at what you've done or saved your state using github, etc.
       </p>
 
       <ul>
         <li>Part 1</li>
         <li>
-          <a href="#" target="_blank">
+          <a href="{{site.baseurl}}/emberjs/javascript/django/python/frontend/backend,/fullstack/ember-django-part-2">
             Part 2
           </a>
         </li>
         <li>
-          <a href="#" target="_blank">
+          <a href="{{site.baseurl}}/emberjs/javascript/django/python/frontend/backend,/fullstack/ember-django-part-3">
             Part 3
           </a>
         </li>
         <li>
-          <a href="#" target="_blank">
+          <a href="#">
             Part 4
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Part 5
           </a>
         </li>
       </ul>
@@ -64,10 +70,12 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack, MultiP
     <li><a href="#install-virtualenv">virtualenv</a></li>
     <li><a href="#install-django">Django</a></li>
   </ul>
+</section>
 
-  <!-- Pip --------------------------->
+<!-- Pip --------------------------->
+<section>
 
-  <h6 id="install-pip">pip</h6>
+  <h4 id="install-pip">pip</h4>
   <p>
     Simply put, pip (Pip Installs Packages) is '<em>a package management system used to install and manage software packages written in Python</em>'. Full installation documentation can be found <a href="https://pip.pypa.io/en/latest/installing/#installing-with-get-pip-py" target="_blank">here</a>.
   </p>
@@ -93,10 +101,12 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack, MultiP
   <p class="mb-5">
     Now that pip is installed, we'll use pip to install virtualenv, and Django.
   </p>
+</section>
 
-  <!-- virtualenv -------------------->
+<!-- virtualenv -------------------->
+<section>
 
-  <h6 id="install-virtualenv">virtualenv</h6>
+  <h4 id="install-virtualenv">virtualenv</h4>
   <p>
     virtualenv '<em>is a tool to create isolated Python environments... It creates an environment that has its own installation directories, that doesn’t share libraries with other virtualenv environments (and optionally doesn’t access the globally installed libraries either)</em>'. You can install, modify and play with python packages and libraries without messing up your global environment. Full installation documentation can be found <a href="https://virtualenv.pypa.io/en/stable/installation/" target="_blank">here</a>.
   </p>
@@ -131,12 +141,14 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack, MultiP
   <p class="mb-5">
     Now that we've created a virtual environment called 'server', make sure that the environment is activated before installing, updating packages within the 'server' folder.
   </p>
+</section>
 
-  <!-- Django ------------------------>
+<!-- Django ------------------------>
+<section>
 
   <!-- updgrade pip -->
 
-  <h6 id="install-django">Django 1.11</h6>
+  <h4 id="install-django">Django 1.11</h4>
   <p>
     Django is described by it's creators as a '<em>high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel</em>'.
   </p>
@@ -161,6 +173,9 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack, MultiP
     # access the django library and get the version (should be 1.11)
     import django
     print(django.get_version())
+
+    # exit using keyboard shortcut ctrl+D or:
+    exit()
   {% endhighlight %}
 </section>
 
@@ -179,6 +194,7 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack, MultiP
     <li>Installed Django 1.11 LTS within the 'server' environment</li>
   </ul>
 
-  <p>In part two we will create our Django project.</p>
+  <p>
+    In <a href="{{site.baseurl}}/emberjs/javascript/django/python/frontend/backend,/fullstack/ember-django-part-2">part two</a> we will create our Django project.
+  </p>
 </section>
-

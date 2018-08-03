@@ -25,24 +25,29 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
 
     <div class="col col-12 col-md-7">
       <p>
-        Welcome to <a>Part 2</a> of my three part tutorial '<b>Django and EmberJS Fullstack: Connecting the Backend to the Frontend</b>'.
+        Welcome to <a>Part 2</a> of my 5 part tutorial '<b>Django and EmberJS Fullstack: Connecting the Backend to the Frontend</b>'.
       </p>
 
       <ul>
         <li>
-          <a href="#"  target="_blank">
+          <a href="{{site.baseurl}}/emberjs/javascript/django/python/frontend/backend,/fullstack,/multipart/ember-django-part-1">
             Part 1
           </a>
         </li>
         <li>Part 2</li>
         <li>
-          <a href="#" target="_blank">
+          <a href="{{site.baseurl}}/emberjs/javascript/django/python/frontend/backend,/fullstack/ember-django-part-3">
             Part 3
           </a>
         </li>
         <li>
-          <a href="#" target="_blank">
+          <a href="#">
             Part 4
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Part 5
           </a>
         </li>
       </ul>
@@ -54,7 +59,7 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
 <!-- CREATE DJANGO PROJECT —————————------------------------------------------>
 <section>
 
-  <h3>Backend: Create Django Project, Project App, Models, Views,  </h3>
+  <h3>Backend: Create Django Project, Project App, Models, Views</h3>
 
   <p>
     The first step is to use Django to create the project folder.
@@ -78,20 +83,47 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
   {% endhighlight %}
 
   <p>
-    Now you can visit localhost:8000 in your browser and confirm that the Django base project is working.
+    Now you can visit localhost:8000 in your browser and confirm that the Django base project is working. Ignore the console errors regarding migrations for the moment.
   </p>
 
-  ## screenshot
+  <img src="/assets/img/posts/2018/django-server.png"
+           class="img-fluid align-self-center mb-2">
 
   <p>
     You can shutdown the server with <code>cmd+ctrl</code>
   </p>
 </section>
 
+<!-- Create Superuser Account -------->
+<section>
+
+  <h4 id="create-superuser">Create the administrative account (superuser)</h4>
+
+  <p>
+    Let's create a 'superuser' that will allow us to login to the admin site and handle our database data.
+  </p>
+
+  {% highlight python %}
+    # create superuser
+    python3 manage.py createsuperuser
+  {% endhighlight %}
+
+  <p>
+    Fill in the field for Username, Email Address (optional), and Password. You should get a message saying <code>Superuser created successfully</code>.
+  </p>
+
+  <p>
+    Now run the server with <code>python3 manage.py runserver</code> and go to <code>http://localhost:8000/admin/</code> to see the admin login page. Enter your superuser account details and you will be logged in.
+  </p>
+
+  <img src="/assets/img/posts/2018/django-admin.png"
+           class="img-fluid align-self-center mt-5 mb-5">
+</section>
+
 <!-- Create New App ---------------->
 <section>
 
-  <h6 id="create-new-app">Create a new 'App'</h6>
+  <h4 id="create-new-app">Create a new 'App'</h4>
 
   <p>
     Think of Django apps as modules that plugin into your project 'myLibrary'. We will create an app called 'Books' that will house models, views, serializers. and the api for interacting with the Books data in the database.
@@ -109,7 +141,7 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
   {% endhighlight %}
 
   <p>
-    Now we will install the 'books' app into the 'myLibrary' project. Opening up myLibrary's settings file: <code>desktop/myLibrary/settings.py</code>.
+    Now we will install the 'books' app into the 'myLibrary' project. Opening up myLibrary's settings file: <code>desktop/server/myLibrary/myLibrary/settings.py</code>.
   </p>
 
   <p>
@@ -126,10 +158,10 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
 
 <!-- Describe books model ------------>
 <section>
-  <h6 id="describe-book-model">Describe the 'book' model</h6>
+  <h4 id="describe-book-model">Describe the 'book' model</h4>
 
   <p>
-    Now we will describe the 'book' model in the 'books' app. Open up book's models file: <code>desktop/myLibrary/books/models.py</code>.
+    Now we will describe the 'book' model in the 'books' app. Open up book's models file: <code>desktop/server/myLibrary/books/models.py</code>.
   </p>
 
   {% highlight python %}
@@ -146,62 +178,103 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
   </p>
 </section>
 
-<!-- Create views -------------------->
-<!-- Is it neccessary to create html views if only using as database? -------->
+<!-- Register Admin for Item --------->
 <section>
-  <h6 id="create-views">Create 'views' to access the book data</h6>
+  <h4 id="register-admin">Register the 'book' model in the 'Admin'</h4>
 
   <p>
-    Now we will create the 'views' for our 'books' app. Open up book's views file: <code>desktop/myLibrary/books/views.py</code>.
+    Now we will register the 'book' with the 'admin' for our books app so that we can view it in the admin panel and manipulate the books data from there Open up book's admin file: <code>desktop/server/myLibrary/books/admin.py</code>.
+  </p>
+
+  {% highlight python %}
+    from django.contrib import admin
+
+    from .models import book
+
+    @admin.register(book)
+    class bookAdmin(admin.ModelAdmin):
+      list_display = ['title', 'author', 'description']
+  {% endhighlight %}
+
+  <p>
+    Now run the server with <code>python3 manage.py runserver</code> and go to <code>http://localhost:8000/admin/</code> and login. Now that the book model has been registered with the admin it is displayed in the admin panel.
+  </p>
+
+  <img src="/assets/img/posts/2018/django-admin-2.png"
+       class="img-fluid align-self-center mt-5 mb-5">
+
+  <p>
+    If you click on books you will see an empty list. Click 'Add Book' to begin creating a new database item.
+  </p>
+
+  <img src="/assets/img/posts/2018/django-admin-3.png"
+       class="img-fluid align-self-center mt-5 mb-5">
+
+  <p>
+    Once you save and go back to the list, you will see it displayed along with it's title, author, and description (<code>list_display</code>).
+  </p>
+
+  <img src="/assets/img/posts/2018/django-admin-4.png"
+       class="img-fluid align-self-center mt-5 mb-5">
+
+  <p>
+    Congrats now we can view out database items in the admin panel, and create, edit, and delete items from the database.
+  </p>
+</section>
+
+<!-- Optional ----------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!-- Create views -------------------->
+<!-- <section>
+  <h4 id="create-views">Create 'views' to access the book data</h4>
+
+   <p>
+    Before we create our views let's create a folder called 'templates' and an html document called 'home' inside the books folder: <code>desktop/server/myLibrary/books/templates/home.html</code>.
+  </p>
+
+  <p>
+    In the final stage of the application we will not have to use these templates because Django will act as backend only, serving up data to our frontend client (EmberJS). This is simply show the data loading for demonstrative purposes.
+  </p>
+
+  {% highlight html %}
+  {% raw %}
+    <div>
+      {% for book in books %}
+        <div class="book-name">
+          <h3>{{ book.title }}</h3>
+          <p>{{ book.author }}</p>
+          <p>{{ book.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  {% endraw %}
+  {% endhighlight %}
+
+  <p>
+    Now we will create the 'views' for our 'books' app. Open up book's views file: <code>desktop/server/myLibrary/books/views.py</code>.
   </p>
 
   {% highlight python %}
     from django.shortcuts import render
     from django.http import HttpResponse
 
-    from .models import Item
+    from .models import book
 
     def home(request):
-      items = Item.objects.all()
-      return render(request, 'home.html', {'items' : items})
-
-    def item_detail(request, id):
-      try:
-        item = Item.objects.get(id=id)
-      except Item.DoesNotExist:
-        raise Http404('Item not found')
-      return render(request, 'item_detail.html', {'item' : item})
+      books = book.objects.all()
+      return render(request, 'home.html', {'books' : books})
   {% endhighlight %}
-</section>
+</section> -->
 
-
-<!-- Register Admin for Item --------->
-<!-- Why do you register the item with the admin? ---------------------------->
-<section>
-  <h6 id="register-admin">Register the 'book' model in the 'Admin'</h6>
-
-  <p>
-    Now we will register the 'book' with the 'admin' for our books app. Open up book's admin file: <code>desktop/myLibrary/books/admin.py</code>.
-  </p>
-
-  {% highlight python %}
-    from django.contrib import admin
-
-    from .models import Item
-
-    @admin.register(Item)
-    class ItemAdmin(admin.ModelAdmin):
-      list_display = ['title', 'subtitle', 'author', 'description', 'cover']
-  {% endhighlight %}
-</section>
 
 <!-- Configure the Item app -------------------------------------------------->
 <!-- Why do we configure the Items in apps.py? ------------------------------->
-<section>
-  <h6 id="register-admin">Register the 'book' model in the 'Admin'</h6>
+<!-- https://stackoverflow.com/questions/32795227/what-is-the-purpose-of-apps-py-in-django-1-9 -->
+<!-- <section>
+  <h4 id="register-admin">Register the 'book' model in the 'Admin'</h4>
 
   <p>
-    Now we will configure the 'books' model with our apps (books). Open up book's apps file: <code>desktop/myLibrary/books/apps.py</code>.
+    Now we will configure the 'books' model with our apps (books). Open up book's apps file: <code>desktop/server/myLibrary/books/apps.py</code>.
   </p>
 
   {% highlight python %}
@@ -211,6 +284,7 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
         name = 'items'
   {% endhighlight %}
 </section>
+ -->
 
 <!-- CONCLUSION -----------—————————------------------------------------------>
 <section>
@@ -223,11 +297,14 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
     <li>Created the Django project called myLibrary</li>
     <li>Created a new app called Books</li>
     <li>Described the books model</li>
-    <li>Created views for the books data</li>
     <li>Registered the book model with the admin</li>
-    <li>Configured the books data in apps</li>
+    <!-- <li>Created views for the books data</li> -->
+    <!-- <li>Configured the books data in apps</li> -->
   </ul>
 
-  <p>In part three we will begin creating the REST API that will deliver data to our frontend EmberJS client.</p>
+  <p>In <a href="#">part three</a> we will begin creating the REST API that will deliver data to our frontend EmberJS client.</p>
 </section>
 
+<!-- https://stackoverflow.com/questions/34548768/django-no-such-table-exception -->
+<!-- https://stackoverflow.com/questions/32795227/what-is-the-purpose-of-apps-py-in-django-1-9 -->
+<!-- https://docs.djangoproject.com/en/2.1/ref/contrib/admin/ -->

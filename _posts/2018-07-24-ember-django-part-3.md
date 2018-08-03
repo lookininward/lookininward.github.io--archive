@@ -25,24 +25,29 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
 
     <div class="col col-12 col-md-7">
       <p>
-        Welcome to <a>Part 3</a> of my five part tutorial '<b>Django and EmberJS Fullstack: Connecting the Backend to the Frontend</b>'.
+        Welcome to <a>Part 3</a> of my 5 part tutorial '<b>Django and EmberJS Fullstack: Connecting the Backend to the Frontend</b>'.
       </p>
 
       <ul>
         <li>
-          <a href="#"  target="_blank">
+          <a href="{{site.baseurl}}/emberjs/javascript/django/python/frontend/backend,/fullstack,/multipart/ember-django-part-1">
             Part 1
           </a>
         </li>
-        <li>Part 2</li>
+        <li>
+          <a href="{{site.baseurl}}/emberjs/javascript/django/python/frontend/backend,/fullstack/ember-django-part-2">
+            Part 2
+          </a>
+        </li>
+        <li>Part 3</li>
         <li>
           <a href="#" target="_blank">
-            Part 3
+            Part 4
           </a>
         </li>
         <li>
           <a href="#" target="_blank">
-            Part 4
+            Part 5
           </a>
         </li>
       </ul>
@@ -53,15 +58,20 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
 
 <!-- Create API -------------------------------------------------------------->
 <section>
+  <h3>Backend: Create Django Project, Project App, Models, Views</h3>
+
   ## build REST API w/ Django REST Framework
   https://www.youtube.com/watch?v=tG6O8YF91HE
 
   create new folder /desktop/mysite/items/api
   create new file /desktop/mysite/items/api/__init__.py
+</section>
 
-  <!-- // Install Django REST Framework ------------------------------------- -->
+<!-- Install Django REST Framework --->
+<section>
+  <h4 id="install-framework">Install Django REST Framework</h4>
 
-  Django REST framework: http://www.django-rest-framework.org/api-guide/viewsets/#genericviewset
+  <!-- Django REST framework: http://www.django-rest-framework.org/api-guide/viewsets/#genericviewset -->
 
   {% highlight bash %}
     pip install djangorestframework
@@ -69,7 +79,7 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
     pip install django-filter
   {% endhighlight %}
 
-    /desktop/mysite/settings.py
+  /desktop/mysite/settings.py
 
   {% highlight python %}
     INSTALLED_APPS = [
@@ -80,10 +90,11 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
     ...
     ]
   {% endhighlight %}
+</section>
 
-
-  <!-- Create Serialier for Items ---------------------------------------------->
-
+<!-- Create Serializer for Items ----->
+<section>
+  <h4 id="create-serializer">Install Django REST Framework</h4>
   create new file /desktop/mysite/items/api/serializers.py
 
   {% highlight python %}
@@ -111,11 +122,12 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
           raise serializers.ValidationError("This title has already been used")
         return value
   {% endhighlight %}
+</section>
 
-
-  <!-- Create Views for Items -------------------------------------------------->
-
-    create new file /desktop/mysite/items/api/views.py
+<!-- Create Views for Items ---------->
+<section>
+  <h4 id="create-views">Install Django REST Framework</h4>
+  create new file /desktop/mysite/items/api/views.py
 
   {% highlight python %}
     from django.db.models import Q
@@ -146,10 +158,11 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
       def get_queryset(self):
         return Item.objects.all()
   {% endhighlight %}
+</section>
 
-
-  <!-- URLs Views for Items ---------------------------------------------------->
-
+<!-- URLs Views for Items ------------>
+<section>
+  <h4 id="create-urls">Install Django REST Framework</h4>
   create new file /desktop/mysite/items/api/urls.py
 
   {% highlight python %}
@@ -166,8 +179,13 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
   {% endhighlight %}
 </section>
 
-<!-- Create superuser -------------------------------------------------------->
-  <!-- // what is the superuser able to do? -->
+<!-- Postman to demonstrate working endpoints ---->
+<section>
+  <h4 id="access-data">Postman</h4>
+</section>
 
 <!-- Conclusion ----------------------------------------------------------- -->
-<!-- Use Postman to demonstrate the end points working to return api data ---->
+<section>
+  <h4 id="conclusion">Conclusion</h4>
+</section>
+
