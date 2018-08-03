@@ -288,7 +288,7 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
 
 <!-- CONCLUSION -----------—————————------------------------------------------>
 <section>
-  <h3>Conclusion</h3>
+  <h3 id="conclusion">Conclusion</h3>
   <p>
     We've completed the following steps:
   </p>

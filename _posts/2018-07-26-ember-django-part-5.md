@@ -52,41 +52,78 @@ tags: [EmberJS, JavaScript, Django, Python]
   </div>
 </section>
 
-<!-- Setup JSON API ------------------>
+<!-- The Problem --------------------->
 <section>
-  <!-- // Django -->
-    Django REST framework JSON API: https://github.com/django-json-api/django-rest-framework-json-api
 
-     <!-- // JSONAPI Adapter -->
-    <!-- https://www.emberjs.com/api/ember-data/release/classes/DS.JSONAPIAdapter -->
+  <p>
+    At the end of Part 4 we saw how Ember was picking up the JSON data from Django, however it wasn't structured in the way that Django likes.
+  </p>
 
-  <!-- // Cleanup -->
+  <p>
+    Before
+  </p>
 
-  <!-- // Item Component -->
-  {% highlight handlebars %}
-    {% raw %}
-      {{lb-item
-        item=item
-      }}
-    {% endraw %}
+  <p>
+    After
+  </p>
+</section>
+
+<!-- Install JSON API ---------------->
+<section>
+  <h4 id="install-node">Install JSON API</h4>
+  <p>
+    Install <code>$ pip install djangorestframework-jsonapi</code>
+    <a href="https://github.com/django-json-api/django-rest-framework-json-api" target="_blank">Documentation</a>
+  </p>
+
+  <p>
+    Install inside myLibrary:
+  </p>
+
+  {% highlight python %}
+    REST_FRAMEWORK = {
+      'PAGE_SIZE': 10,
+      'EXCEPTION_HANDLER': 'rest_framework_json_api.exceptions.exception_handler',
+      'DEFAULT_PAGINATION_CLASS':
+          'rest_framework_json_api.pagination.JsonApiPageNumberPagination',
+      'DEFAULT_PARSER_CLASSES': (
+          'rest_framework_json_api.parsers.JSONParser',
+          'rest_framework.parsers.FormParser',
+          'rest_framework.parsers.MultiPartParser'
+      ),
+      'DEFAULT_RENDERER_CLASSES': (
+          'rest_framework_json_api.renderers.JSONRenderer',
+          'rest_framework.renderers.BrowsableAPIRenderer',
+      ),
+      'DEFAULT_METADATA_CLASS': 'rest_framework_json_api.metadata.JSONAPIMetadata',
+      'DEFAULT_FILTER_BACKENDS': (
+          'rest_framework.filters.OrderingFilter',
+      ),
+      'ORDERING_PARAM': 'sort',
+      'TEST_REQUEST_RENDERER_CLASSES': (
+          'rest_framework_json_api.renderers.JSONRenderer',
+      ),
+      'TEST_REQUEST_DEFAULT_FORMAT': 'vnd.api+json'
+  }
   {% endhighlight %}
 </section>
 
-<!-- Books Route Template ------------->
+<!-- Books Route Template ------------>
 <section>
   <h4 id="books-route-template">Books Route Template</h4>
 
-  <!-- // Items Route Template -->
+  <p>
+    Let's update the books route template to list any books coming through:
+  </p>
+
   {% highlight handlebars %}
   {% raw %}
-    <div class="items">
-      {{#each items as |item|}}
-        {{lb-item
-          item=item
-        }}
-      {{/each}}
-
-    </div>
+    {{#each model as |book|}}
+      <div class="book">
+        <div class="book-title">{{book.title}}</div>
+        <div class="book-description">{{book.description}}</div>
+      </div>
+    {{/each}}
   {% endraw %}
   {% endhighlight %}
 </section>
@@ -101,9 +138,25 @@ tags: [EmberJS, JavaScript, Django, Python]
   <h4 id="book-detail-template">Book Detail Template</h4>
 </section>
 
-<!-- Conclusion -------------------------------------------------------------->
+<!-- Conclusion ---------------------->
 <section>
-  <h3 id="conclusion">Conclusion</h3>
   <!-- // Show that get request works and the data being return is corrently formatted and Ember is able to display it properly without areas -->
+  <h3 id="conclusion">Conclusion</h3>
+
+  <p>
+    We've completed the following steps:
+  </p>
+
+  <ul>
+    <li>Identified the problem with the data coming from Django</li>
+    <li>Installed JSON API into Django</li>
+    <li>Updated the Books Route Template</li>
+    <li>Created the book detail route and template</li>
+    <li>Successfully viewing, editing, and deleting records from the db from EmberJS client</li>
+  </ul>
+
+  <p>
+    Thank you for sticking with it.
+  </p>
 </section>
 

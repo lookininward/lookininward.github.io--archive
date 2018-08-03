@@ -60,41 +60,62 @@ tags: [EmberJS, JavaScript, Django, Python]
 <section>
   <h4 id="install-node">NodeJS and NPM</h4>
 
-  <!-- // NodeJS ------------------ -->
-    Installation File: http://nodejs.org/en/download/
+  <p>
+    There are a few ways to install NodeJS and NPM onto your machine. Let's stick with the most straightforward by downloading the <a href="http://nodejs.org/en/download/" target="_blank"> installation file from the official site</a>.
+  </p>
 
-  <!-- // NodeJS with Brew -------- -->
-    Install Brew: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  <p>
+    Once installation is complete check that everything is installed:
+  </p>
 
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-    brew install node
-
-  <!-- Check Versions ------------- -->
+  {% highlight bash %}
     node --version
     npm --version
+  {% endhighlight %}
 </section>
 
 <!-- Setup EmberJS ------------------->
 <section>
   <h4 id="install-ember">EmberJS</h4>
 
+  <p>
+    Now that we have NPM installed, we can use it to install the Ember CLI:
+  </p>
+
+  {% highlight bash %}
     npm install -g ember-cli
-    npm --version
+    ember-cli --version
+  {% endhighlight %}
 
-  <!--
-    // Create Project
-    // Run server to verify works -- ember s -->
+  <p>
+    Let's run the server using <code>ember s</code> and verify that it's working @localhost:4200.
+  </p>
 
+  ## Screenshot of Ember start screen
+</section>
 
-    file client/app/templates/application.hbs
+<!-- Setup DOM ----------------------->
+<section>
+  <h4 id="setup-dom">Setup DOM</h4>
+
+  <p>
+    Locate the file <code>client/app/templates/application.hbs</code>.
+  </p>
+
+  {% highlight handlebars %}
+  {% raw %}
 
     <div class="container">
       {{outlet}}
     </div>
+  {% endraw %}
+  {% endhighlight %}
 
-    file client/app/styles/app.scss
+  <p>
+    Locate the file <code>client/app/styles/app.scss</code>.
+  </p>
 
+  {% highlight scss %}
     body {
       margin: 0;
       padding: 0;
@@ -107,15 +128,38 @@ tags: [EmberJS, JavaScript, Django, Python]
       flex-direction: column;
       width: 100%;
       height: 100%
-    }
+  {% endhighlight %}
+</section>
+
+<!-- Create Book Model --------------->
+<section>
+  <h4 id="create-book-model">Create Book Model</h4>
+
+  <p>
+    Let's generate a model of the books data for Ember Data: <code>ember g model book</code>.
+  </p>
+
+  {% highlight javascript %}
+    import DS from 'ember-data';
+
+    export default DS.Model.extend({
+      title: DS.attr(),
+      description: DS.attr()
+    });
+  {% endhighlight %}
 </section>
 
 <!-- Create Books Route -------------->
 <section>
-  <h4 id="create-biijs-route">Create Books Route</h4>
-    ember g route items
+  <h4 id="create-books-route">Create Books Route</h4>
 
-    file client/app/router.js
+  <p>
+    Let's generate a new route that will display all of the books in our database: <code>ember g route books</code>.
+  </p>
+
+  <p>
+    The router file <code>client/app/router.js</code> will now be update with:
+  </p>
 
   {% highlight javascript %}
     import EmberRouter from '@ember/routing/router';
@@ -127,13 +171,15 @@ tags: [EmberJS, JavaScript, Django, Python]
     });
 
     Router.map(function() {
-      this.route('items', function() {});
+      this.route('books', function() {});
     });
 
     export default Router;
   {% endhighlight %}
 
-    file client/app/routes/items.js
+  <p>
+    Let's edit the books route <code>client/app/routes/books.js</code> to load all books from the database.
+  </p>
 
   {% highlight javascript %}
     import Route from '@ember/routing/route';
@@ -143,40 +189,28 @@ tags: [EmberJS, JavaScript, Django, Python]
       store: service(),
 
       model() {
-        return this.get('store').findAll('item');
+        return this.get('store').findAll('book');
       }
     });
   {% endhighlight %}
 
-    file client/app/templates/items.hbs
+  <p>
+    Let's edit the books route template <code>client/app/templates/books.hbs</code> display the books that are returned in the model.
+  </p>
 
   {% highlight handlebars %}
     {% raw %}
-    <div class="items">
+    <div class="books">
 
-      {{#each items as |item|}}
+      {{#each books as |book|}}
 
-        {{item.title}}
-        {{item.description}}
+        {{book.title}}
+        {{book.description}}
 
       {{/each}}
 
     </div>
     {% endraw %}
-  {% endhighlight %}
-</section>
-
-<!-- Create Book Model --------------->
-<section>
-  <h4 id="create-book-model">Create Item Model</h4>
-
-  {% highlight javascript %}
-    import DS from 'ember-data';
-
-    export default DS.Model.extend({
-      title: DS.attr(),
-      description: DS.attr()
-    });
   {% endhighlight %}
 </section>
 
@@ -201,13 +235,31 @@ tags: [EmberJS, JavaScript, Django, Python]
       namespace: 'api'
     });
   {% endhighlight %}
+
+  <p>
+    Show how the API data isn't correctly structured
+  </p>
 </section>
 
 <!-- Conclusion ---------------------->
 <section>
   <h3 id="conclusion">Conclusion</h3>
 
-  <!-- // Demonstrate server works and captures data ---------------------------------
-  // Do GET request -->
+  <p>
+    We've completed the following steps:
+  </p>
+
+  <ul>
+    <li>Installed NodeJS and NPM</li>
+    <li>Installed the Ember CLI and created a new client project</li>
+    <li>Basic DOM setup</li>
+    <li>Created a Books route and template to load and display books from our database</li>
+    <li>Created an application adapter to capture JSON data coming from our Django backend</li>
+  </ul>
+
+  <p>
+    In <a href="#">part five</a> we will go back to Django and structure the data in a way that is amenable to Ember Data's uses.
+  </p>
 </section>
 
+<!-- https://www.emberjs.com/api/ember-data/release/classes/DS.JSONAPIAdapter -->
