@@ -194,6 +194,18 @@ tags: [EmberJS, JavaScript, Django, Python]
     });
   {% endhighlight %}
 
+  ## load fake model data for demonstration
+
+  model() {
+    return [
+      {
+        id: 1,
+        title: 'Monkey'
+        description: 'This is a description'
+      }
+    ]
+  }
+
   <p>
     Let's edit the books route template <code>client/app/templates/books.hbs</code> display the books that are returned in the model.
   </p>
@@ -212,12 +224,19 @@ tags: [EmberJS, JavaScript, Django, Python]
     </div>
     {% endraw %}
   {% endhighlight %}
+
+  ## demonstrate the server running and showing this fake data
 </section>
 
 <!-- Create Application Adapter ------>
 <section>
   <h4 id="create-app-adapter">Create Application Adapter</h4>
     /desktop/client/app/adapters/application.js
+
+
+  <p>
+    We don't want mock data. We want the real thing coming form the backend.
+  </p>
 
     Direct Ember Data to host
 

@@ -119,7 +119,6 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
           'author',
           'description',
         ) # converts to JSON
-
   {% endhighlight %}
 
   <p>
@@ -151,7 +150,7 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
   {% highlight python %}
     from django.db.models import Q
     from rest_framework import generics, mixins
-    from items.models import book
+    from books.models import book
     from .serializers import  bookSerializer
 
     class bookAPIView(mixins.CreateModelMixin, generics.ListAPIView):
@@ -161,9 +160,9 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
 
       def get_queryset(self):
         qs = book.objects.all()
-        query = self.request.GET.get('q')
-        if query is not None:
-          qs = qs.filter(Q(title__icontains=query)|Q(description__icontains=query)).distinct()
+        # query = self.request.GET.get('q')
+        # if query is not None:
+        #   qs = qs.filter(Q(title__icontains=query)|Q(description__icontains=query)).distinct()
         return qs
 
       def post(self, request, *args, **kwargs):
@@ -198,18 +197,18 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
   <h4 id="create-urls">Create URLS</h4>
 
   <p>
-    Let's create the view file in <code>/desktop/myLibrary/books/api/urls.py</code>
+    Let's create the URLs file in <code>/desktop/myLibrary/books/api/urls.py</code>
   </p>
 
   {% highlight python %}
   {% raw %}
-    from .views import bookRudView, bookAPIView
-
+    # from .views import bookRudView, bookAPIView
+    from .views import bookAPIView
     from django.conf.urls import url
 
     urlpatterns = [
       url(r'^$', bookAPIView.as_view(), name='book-create'),
-      url(r'^(?P<id>\d+)/$', bookRudView.as_view(), name='book-rud')
+      # url(r'^(?P<id>\d+)/$', bookRudView.as_view(), name='book-rud')
     ]
   {% endraw %}
   {% endhighlight %}
@@ -217,6 +216,25 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
   <p>
     What is this doing?
   </p>
+
+  <p>
+    Let's open up the URLs file in the main project folder: <code>/desktop/myLibrary/myLibrary/urls.py</code>
+  </p>
+
+  {% highlight python %}
+    from django.conf.urls import url, include
+    from django.contrib import admin
+
+    from books import views
+
+    urlpatterns = [
+        url(r'^admin/', admin.site.urls),
+        url(r'^$', views.home, name='home'),
+
+        # addition
+        url(r'^api/books/', include('books.api.urls', namespace='api-books')),
+    ]
+  {% endhighlight %}
 </section>
 
 <!-- Postman to demonstrate working endpoints ---->
@@ -224,7 +242,14 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
   <h4 id="access-data">Postman</h4>
 
   <p>
-    Now that we have the base REST framework setup. Let's see the data that the backend is returning to us.
+    Now that we have the base REST framework setup. Let's see the data that the backend is returning to us. With the server running, checkout out @http://localhost:8000/api/books/. You should see this screen:
+  </p>
+
+  <img src="/assets/img/posts/2018/api-books.png"
+           class="img-fluid align-self-center mb-2">
+
+  <p>
+    What is this screen? How does it relate to the views we created? The mixins we used from Django REST framework?
   </p>
 </section>
 

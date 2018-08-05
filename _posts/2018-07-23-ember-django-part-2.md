@@ -218,7 +218,7 @@ tags: [EmberJS, JavaScript, Django, Python, Frontend, Backend, Fullstack]
        class="img-fluid align-self-center mt-5 mb-5">
 
   <p>
-    Congrats now we can view out database items in the admin panel, and create, edit, and delete items from the database.
+    Congrats now we can view out database items in the admin panel, and create, edit, and delete items from the database through the admin panel.
   </p>
 </section>
 
